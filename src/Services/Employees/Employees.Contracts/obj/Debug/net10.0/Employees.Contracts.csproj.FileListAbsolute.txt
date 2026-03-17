@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\bin\Debug\net10.0\Employees.Contracts.deps.json
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\bin\Debug\net10.0\Employees.Contracts.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\bin\Debug\net10.0\Employees.Contracts.pdb
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\obj\Debug\net10.0\Employees.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\obj\Debug\net10.0\Employees.Contracts.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\obj\Debug\net10.0\Employees.Contracts.AssemblyInfo.cs
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\obj\Debug\net10.0\Employees.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\obj\Debug\net10.0\Employees.Contracts.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\obj\Debug\net10.0\refint\Employees.Contracts.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\obj\Debug\net10.0\Employees.Contracts.pdb
+C:\Users\User\Desktop\NexusHR\src\Services\Employees\Employees.Contracts\obj\Debug\net10.0\ref\Employees.Contracts.dll

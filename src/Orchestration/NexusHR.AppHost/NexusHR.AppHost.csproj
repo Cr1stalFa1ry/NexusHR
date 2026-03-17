@@ -1,0 +1,23 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.1.2">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>7b570430-d452-44af-a476-a8c497d8a324</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Gateaway\NexusHR.Gateaway\NexusHR.Gateaway.csproj" />
+    <ProjectReference Include="..\..\Services\Employees\Employees.Api\Employees.Api.csproj" />
+    <ProjectReference Include="..\..\Services\Notifications\Notifications.Api\Notifications.Api.csproj" />
+    <ProjectReference Include="..\..\Services\Payroll\Payroll.Api\Payroll.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="13.1.2" />
+    <PackageReference Include="Aspire.Hosting.RabbitMQ" Version="13.1.2" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\NexusHR.Gateaway.props" />
+</Project>

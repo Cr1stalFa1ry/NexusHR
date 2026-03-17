@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.4" />
+    <PackageReference Include="WolverineFx" Version="5.17.0" />
+    <PackageReference Include="WolverineFx.RabbitMQ" Version="5.17.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Orchestration\NexusHR.ServiceDefaults\NexusHR.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\..\..\Shared\NesuxHR.Shared.Kernel\NexusHR.Shared.Kernel.csproj" />
+    <ProjectReference Include="..\..\Employees\Employees.Contracts\Employees.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Context\" />
+    <Folder Include="Context\Configurations\" />
+    <Folder Include="Domain\" />
+  </ItemGroup>
+
+</Project>

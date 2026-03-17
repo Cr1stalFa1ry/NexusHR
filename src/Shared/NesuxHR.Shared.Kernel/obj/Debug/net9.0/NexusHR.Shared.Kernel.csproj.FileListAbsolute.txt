@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\bin\Debug\net9.0\NexusHR.Shared.Kernel.deps.json
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\bin\Debug\net9.0\NexusHR.Shared.Kernel.dll
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\bin\Debug\net9.0\NexusHR.Shared.Kernel.pdb
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net9.0\NexusHR.Shared.Kernel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net9.0\NexusHR.Shared.Kernel.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net9.0\NexusHR.Shared.Kernel.AssemblyInfo.cs
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net9.0\NexusHR.Shared.Kernel.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net9.0\NexusHR.Shared.Kernel.dll
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net9.0\refint\NexusHR.Shared.Kernel.dll
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net9.0\NexusHR.Shared.Kernel.pdb
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net9.0\ref\NexusHR.Shared.Kernel.dll
