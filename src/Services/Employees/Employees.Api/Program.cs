@@ -1,11 +1,11 @@
 using Employees.Api.Context;
-using Employees.Api.Features.Hiring;
 using Employees.Contracts.Events;
 using Microsoft.EntityFrameworkCore;
 using Wolverine;
 using Wolverine.Postgresql;
 using Wolverine.RabbitMQ;
 using Wolverine.EntityFrameworkCore;
+using JasperFx.Resources;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,29 +16,47 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
 
-builder.AddNpgsqlDbContext<EmployeesDbContext>("employee-db"); // регистрируем контекст в di, database указано в AppHost
+// register context to DI, employee-db indicated in AppHost
+// также влючает pooling, retries, corresponding health check, logging and telemetry
+builder.AddNpgsqlDbContext<EmployeesDbContext>("employee-db", opt =>
+{
+    opt.DisableRetry = true;
+}); 
+// была проблема в обработчике при использовании Transactional Middleware, конфликтовали две стратегии: со стороны 
+// бд и со стороны самого Wolverine (именно transactional middleware) - opt.DisableRetry = true
 
 builder.Host.UseWolverine(opts =>
 {
-    // Указываем Wolverine использовать EF Core для Outbox
-    // Это автоматически зарегистрирует IDbContextOutbox в DI
-    opts.UseEntityFrameworkCoreOutbox<EmployeesDbContext>();
-
     // явное сканирование сборки, где лежит текущий проект, для нахождения всех классов, 
     // у которых есть суффикс Handler
     opts.Discovery.IncludeAssembly(typeof(Program).Assembly);
 
-    // получаем строки подключения по messging и employee-db, которые настроили в AppHost
+    // get connection strings from messaging and employee-db, which configure in Apphost
     var connectionStringRabbitMQ = builder.Configuration.GetConnectionString("messaging");
     var connectionStringPostgres = builder.Configuration.GetConnectionString("employee-db");
 
-    // настройка хранилищ сообщений (outbox/inbox)
-    opts.PersistMessagesWithPostgresql(connectionStringPostgres!);
+
+    // setting up storage messages (outbox/inbox)
+    opts.PersistMessagesWithPostgresql(connectionStringPostgres!, "wolverine");
+
+    // enable outbox for Ef Core and register necessary services, including IDbContextOutbox<T>
+    // Set up Entity Framework Core as the support
+    // for Wolverine's transactional middleware
+    opts.UseEntityFrameworkCoreTransactions();
+
+    // opts.Policies.UseDurableLocalQueues();
+
+    // создание 
+    opts.Services.AddResourceSetupOnStartup();
 
     opts.UseRabbitMq(new Uri(connectionStringRabbitMQ!))
         .AutoProvision();
 
-    opts.PublishMessage<HiredEmployee>().ToRabbitQueue("hired-employees");
+    //opts.Policies.UseDurableOutboxOnAllSendingEndpoints();
+
+    opts.PublishMessage<HiredEmployee>()
+        .ToRabbitQueue("hired-employees")
+        .UseDurableOutbox();
 });
 
 var app = builder.Build();
@@ -53,8 +71,6 @@ if (app.Environment.IsDevelopment())
 
 app.MapDefaultEndpoints();
 
-// вызов метода расширения с minimal api 
-//app.MapEmployees();
 app.MapControllers();
 
 app.Run();

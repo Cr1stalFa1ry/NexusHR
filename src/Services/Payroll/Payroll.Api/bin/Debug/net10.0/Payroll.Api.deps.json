@@ -16,6 +16,8 @@
           "NexusHR.Shared.Kernel": "1.0.0",
           "Swashbuckle.AspNetCore": "10.1.4",
           "WolverineFx": "5.17.0",
+          "WolverineFx.EntityFrameworkCore": "5.17.0",
+          "WolverineFx.Postgresql": "5.17.0",
           "WolverineFx.RabbitMQ": "5.17.0"
         },
         "runtime": {
@@ -34,6 +36,26 @@
           "lib/net10.0/Aspire.Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "13.1.2.0",
             "fileVersion": "13.100.226.12513"
+          }
+        }
+      },
+      "DistributedLock.Core/1.0.8": {
+        "runtime": {
+          "lib/net8.0/DistributedLock.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DistributedLock.Postgres/1.3.0": {
+        "dependencies": {
+          "DistributedLock.Core": "1.0.8",
+          "Npgsql": "10.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/DistributedLock.Postgres.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -834,6 +856,25 @@
           }
         }
       },
+      "NetTopologySuite/2.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "NetTopologySuite.IO.PostGis/2.1.0": {
+        "dependencies": {
+          "NetTopologySuite": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/NetTopologySuite.IO.PostGis.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "NewId/4.0.1": {
         "runtime": {
           "lib/net6.0/NewId.dll": {
@@ -879,6 +920,19 @@
           "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.0.0.0"
+          }
+        }
+      },
+      "Npgsql.NetTopologySuite/9.0.4": {
+        "dependencies": {
+          "NetTopologySuite": "2.5.0",
+          "NetTopologySuite.IO.PostGis": "2.1.0",
+          "Npgsql": "10.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Npgsql.NetTopologySuite.dll": {
+            "assemblyVersion": "9.0.4.0",
+            "fileVersion": "9.0.4.0"
           }
         }
       },
@@ -1130,6 +1184,43 @@
           }
         }
       },
+      "Weasel.Core/8.8.1": {
+        "dependencies": {
+          "JasperFx": "1.20.0"
+        },
+        "runtime": {
+          "lib/net10.0/Weasel.Core.dll": {
+            "assemblyVersion": "8.8.1.0",
+            "fileVersion": "8.8.1.0"
+          }
+        }
+      },
+      "Weasel.EntityFrameworkCore/8.8.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "10.0.3",
+          "Weasel.Core": "8.8.1"
+        },
+        "runtime": {
+          "lib/net10.0/Weasel.EntityFrameworkCore.dll": {
+            "assemblyVersion": "8.8.1.0",
+            "fileVersion": "8.8.1.0"
+          }
+        }
+      },
+      "Weasel.Postgresql/8.8.1": {
+        "dependencies": {
+          "DistributedLock.Postgres": "1.3.0",
+          "Npgsql": "10.0.0",
+          "Npgsql.NetTopologySuite": "9.0.4",
+          "Weasel.Core": "8.8.1"
+        },
+        "runtime": {
+          "lib/net10.0/Weasel.Postgresql.dll": {
+            "assemblyVersion": "8.8.1.0",
+            "fileVersion": "8.8.1.0"
+          }
+        }
+      },
       "WolverineFx/5.17.0": {
         "dependencies": {
           "JasperFx": "1.20.0",
@@ -1145,6 +1236,33 @@
           }
         }
       },
+      "WolverineFx.EntityFrameworkCore/5.17.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.3",
+          "Microsoft.EntityFrameworkCore.Design": "10.0.3",
+          "Microsoft.EntityFrameworkCore.Relational": "10.0.3",
+          "Weasel.EntityFrameworkCore": "8.8.1",
+          "WolverineFx.RDBMS": "5.17.0"
+        },
+        "runtime": {
+          "lib/net10.0/Wolverine.EntityFrameworkCore.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "WolverineFx.Postgresql/5.17.0": {
+        "dependencies": {
+          "Weasel.Postgresql": "8.8.1",
+          "WolverineFx.RDBMS": "5.17.0"
+        },
+        "runtime": {
+          "lib/net10.0/Wolverine.Postgresql.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "WolverineFx.RabbitMQ/5.17.0": {
         "dependencies": {
           "RabbitMQ.Client": "7.1.2",
@@ -1152,6 +1270,18 @@
         },
         "runtime": {
           "lib/net10.0/Wolverine.RabbitMQ.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "WolverineFx.RDBMS/5.17.0": {
+        "dependencies": {
+          "Weasel.Core": "8.8.1",
+          "WolverineFx": "5.17.0"
+        },
+        "runtime": {
+          "lib/net10.0/Wolverine.RDBMS.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -1204,6 +1334,20 @@
       "sha512": "sha512-ItIRh9o1i8D/HXApfUT2n2+TdORZ8TyXL+SAFtNL0yhBGLadAUq8d5raCmQYfTx+0u3eiIANCRDN4LHFIt9qWQ==",
       "path": "aspire.npgsql.entityframeworkcore.postgresql/13.1.2",
       "hashPath": "aspire.npgsql.entityframeworkcore.postgresql.13.1.2.nupkg.sha512"
+    },
+    "DistributedLock.Core/1.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LAOsY8WxX8JU/n3lfXFz+f2pfnv0+4bHkCrOO3bwa28u9HrS3DlxSG6jf+u76SqesKs+KehZi0CndkfaUXBKvg==",
+      "path": "distributedlock.core/1.0.8",
+      "hashPath": "distributedlock.core.1.0.8.nupkg.sha512"
+    },
+    "DistributedLock.Postgres/1.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CyjXmbhFgG30qPg4DwGnsmZO63y5DBRo+PI2xW0NwtFrsYsMVt/T1RcEUlb36JMKhDkf+euhnkanv/nU+W35qA==",
+      "path": "distributedlock.postgres/1.3.0",
+      "hashPath": "distributedlock.postgres.1.3.0.nupkg.sha512"
     },
     "FastExpressionCompiler/5.3.0": {
       "type": "package",
@@ -1485,6 +1629,20 @@
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
     },
+    "NetTopologySuite/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
+      "path": "nettopologysuite/2.5.0",
+      "hashPath": "nettopologysuite.2.5.0.nupkg.sha512"
+    },
+    "NetTopologySuite.IO.PostGis/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3W8XTFz8iP6GQ5jDXK1/LANHiU+988k1kmmuPWNKcJLpmSg6CvFpbTpz+s4+LBzkAp64wHGOldSlkSuzYfrIKA==",
+      "path": "nettopologysuite.io.postgis/2.1.0",
+      "hashPath": "nettopologysuite.io.postgis.2.1.0.nupkg.sha512"
+    },
     "NewId/4.0.1": {
       "type": "package",
       "serviceable": true,
@@ -1519,6 +1677,13 @@
       "sha512": "sha512-E2+uSWxSB8LdsUVwPaqRWOcGOP92biry2JEwc0KJMdLJF+aZdczeIdEXVwEyv4nSVMQJH0o8tLhyAMiR6VF0lw==",
       "path": "npgsql.entityframeworkcore.postgresql/10.0.0",
       "hashPath": "npgsql.entityframeworkcore.postgresql.10.0.0.nupkg.sha512"
+    },
+    "Npgsql.NetTopologySuite/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7AwBLPz8EPmgAXveZ55K0Tz/9bNb8j4VI4pkTOQjyHrce8wWfAA9pefm3REidy+Kt2UFiAWef34YVi7sb/kB4A==",
+      "path": "npgsql.nettopologysuite/9.0.4",
+      "hashPath": "npgsql.nettopologysuite.9.0.4.nupkg.sha512"
     },
     "Npgsql.OpenTelemetry/10.0.0": {
       "type": "package",
@@ -1695,6 +1860,27 @@
       "path": "system.composition.typedparts/9.0.0",
       "hashPath": "system.composition.typedparts.9.0.0.nupkg.sha512"
     },
+    "Weasel.Core/8.8.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iLPWsHuCIY9BAyQ8Zfnih5TfCyHRImTBJuw8fc1/Tbt4myjvV7sZCPeWS+YzCHH4gDfTbib16JoI/t6gEnI1QA==",
+      "path": "weasel.core/8.8.1",
+      "hashPath": "weasel.core.8.8.1.nupkg.sha512"
+    },
+    "Weasel.EntityFrameworkCore/8.8.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7VMILfl3mQ4JbW047FU27v4qmqLvKZoIkww8msh7KpSqvzuKVTshoTTyAbCTWlE25YEqoqqgkI8d+U7ygAENNQ==",
+      "path": "weasel.entityframeworkcore/8.8.1",
+      "hashPath": "weasel.entityframeworkcore.8.8.1.nupkg.sha512"
+    },
+    "Weasel.Postgresql/8.8.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/AmwFgODjWMSY/T9waNpLC85ltF7CsGD4sian62dYh6YTfHw/w5t7y1oYEYWCa5eMLr+bMZS8xUiHDbzCQf7XQ==",
+      "path": "weasel.postgresql/8.8.1",
+      "hashPath": "weasel.postgresql.8.8.1.nupkg.sha512"
+    },
     "WolverineFx/5.17.0": {
       "type": "package",
       "serviceable": true,
@@ -1702,12 +1888,33 @@
       "path": "wolverinefx/5.17.0",
       "hashPath": "wolverinefx.5.17.0.nupkg.sha512"
     },
+    "WolverineFx.EntityFrameworkCore/5.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VsolUMeYPxYg4QcvKH1Ui1d7NR/0GTUmkQfWdfxAlxtTT/UZGOaet0GWjzm8Osqk97ouJfCG19tID8cVKKes7g==",
+      "path": "wolverinefx.entityframeworkcore/5.17.0",
+      "hashPath": "wolverinefx.entityframeworkcore.5.17.0.nupkg.sha512"
+    },
+    "WolverineFx.Postgresql/5.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SLzKH/gdC9g42nAXpbjyplZY345LSnrnjroIa2Fj1Q0QL9W+zm5P/l55cRSLuibmN12TeTkZ6G6PQWqGv5irFQ==",
+      "path": "wolverinefx.postgresql/5.17.0",
+      "hashPath": "wolverinefx.postgresql.5.17.0.nupkg.sha512"
+    },
     "WolverineFx.RabbitMQ/5.17.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-zHi/l+7H/lYPsIfdOHRhbLVs8/pkgx7tb8yLZT4+KV17pfGpsu3f5+JMF/ylARM5ok0DKX+8zNObj0QDhTQtGg==",
       "path": "wolverinefx.rabbitmq/5.17.0",
       "hashPath": "wolverinefx.rabbitmq.5.17.0.nupkg.sha512"
+    },
+    "WolverineFx.RDBMS/5.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PwHOICMum8gRmQgJvaSsMDTHOImPQdtPWVcCdauHT41tuOcc7WBDp+SH9ogT1csqjO8TuVJCGBIzSoxagsBqKw==",
+      "path": "wolverinefx.rdbms/5.17.0",
+      "hashPath": "wolverinefx.rdbms.5.17.0.nupkg.sha512"
     },
     "Employees.Contracts/1.0.0": {
       "type": "project",

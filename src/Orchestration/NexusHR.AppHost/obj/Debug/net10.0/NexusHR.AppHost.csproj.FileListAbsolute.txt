@@ -105,3 +105,4 @@ C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.AppHost\obj\Debug\net10.
 C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.AppHost\obj\Debug\net10.0\NexusHR.AppHost.genruntimeconfig.cache
 C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.AppHost\obj\Debug\net10.0\ref\NexusHR.AppHost.dll
 C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.AppHost\obj\Debug\net10.0\Aspire\references\Notifications_Api.ProjectMetadata.g.cs
+C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.AppHost\obj\Debug\net10.0\NexusHR.AppHost.sourcelink.json

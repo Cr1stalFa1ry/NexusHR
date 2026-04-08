@@ -91,7 +91,7 @@
           }
         }
       },
-      "JasperFx/1.21.0": {
+      "JasperFx/1.20.0": {
         "type": "package",
         "dependencies": {
           "FastExpressionCompiler": "5.3.0",
@@ -1668,10 +1668,10 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Weasel.Core/8.9.0": {
+      "Weasel.Core/8.8.1": {
         "type": "package",
         "dependencies": {
-          "JasperFx": "1.21.0"
+          "JasperFx": "1.20.0"
         },
         "compile": {
           "lib/net10.0/Weasel.Core.dll": {
@@ -1684,11 +1684,11 @@
           }
         }
       },
-      "Weasel.EntityFrameworkCore/8.9.0": {
+      "Weasel.EntityFrameworkCore/8.8.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "9.0.0",
-          "Weasel.Core": "8.9.0"
+          "Weasel.Core": "8.8.1"
         },
         "compile": {
           "lib/net10.0/Weasel.EntityFrameworkCore.dll": {
@@ -1740,14 +1740,14 @@
           }
         }
       },
-      "WolverineFx.EntityFrameworkCore/5.19.1": {
+      "WolverineFx.EntityFrameworkCore/5.17.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "10.0.2",
-          "Microsoft.EntityFrameworkCore.Design": "10.0.2",
-          "Microsoft.EntityFrameworkCore.Relational": "10.0.2",
-          "Weasel.EntityFrameworkCore": "8.9.0",
-          "WolverineFx.RDBMS": "5.19.1"
+          "Microsoft.EntityFrameworkCore": "10.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "10.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "10.0.0",
+          "Weasel.EntityFrameworkCore": "8.8.1",
+          "WolverineFx.RDBMS": "5.17.0"
         },
         "compile": {
           "lib/net10.0/Wolverine.EntityFrameworkCore.dll": {
@@ -1794,11 +1794,11 @@
           }
         }
       },
-      "WolverineFx.RDBMS/5.19.1": {
+      "WolverineFx.RDBMS/5.17.0": {
         "type": "package",
         "dependencies": {
-          "Weasel.Core": "8.9.0",
-          "WolverineFx": "5.19.1"
+          "Weasel.Core": "8.8.1",
+          "WolverineFx": "5.17.0"
         },
         "compile": {
           "lib/net10.0/Wolverine.RDBMS.dll": {
@@ -1981,14 +1981,14 @@
         "imtools.nuspec"
       ]
     },
-    "JasperFx/1.21.0": {
-      "sha512": "7a9Uu3XIo7dl2XjzX9oc/t/n9Yx/vb0DMOieWPYrQpQFtzYjxV0ndATygpmhJqWohidORHsg0QJRqp3+o8iDAw==",
+    "JasperFx/1.20.0": {
+      "sha512": "ymb6lJnPITfnnw2IO2Ddtu4weXDcA5L80rXYKhF7H8IIsFCiTPQ1DAeGtNvsF22N3JBKNyKjAtg+fuTxgRMj3g==",
       "type": "package",
-      "path": "jasperfx/1.21.0",
+      "path": "jasperfx/1.20.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "jasperfx.1.21.0.nupkg.sha512",
+        "jasperfx.1.20.0.nupkg.sha512",
         "jasperfx.nuspec",
         "lib/net10.0/JasperFx.dll",
         "lib/net10.0/JasperFx.xml",
@@ -4916,10 +4916,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Weasel.Core/8.9.0": {
-      "sha512": "KQhkhN3vUgKhCw52joT7OkU6NeCP5EjeupOjdnyPLBPbkuXfUOFwHWHRJDo2FQx4Gwm6d9a2hcO0FvdRbnZIFQ==",
+    "Weasel.Core/8.8.1": {
+      "sha512": "iLPWsHuCIY9BAyQ8Zfnih5TfCyHRImTBJuw8fc1/Tbt4myjvV7sZCPeWS+YzCHH4gDfTbib16JoI/t6gEnI1QA==",
       "type": "package",
-      "path": "weasel.core/8.9.0",
+      "path": "weasel.core/8.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4929,14 +4929,14 @@
         "lib/net8.0/Weasel.Core.xml",
         "lib/net9.0/Weasel.Core.dll",
         "lib/net9.0/Weasel.Core.xml",
-        "weasel.core.8.9.0.nupkg.sha512",
+        "weasel.core.8.8.1.nupkg.sha512",
         "weasel.core.nuspec"
       ]
     },
-    "Weasel.EntityFrameworkCore/8.9.0": {
-      "sha512": "Jz2RKZgnDrED0JI2+apZ49tYJma0boNPeu/j722ldR3LQJ3Fn+z7NL7hAPOzDKgrnxfDpWL2uhcOLiAvLcShGQ==",
+    "Weasel.EntityFrameworkCore/8.8.1": {
+      "sha512": "7VMILfl3mQ4JbW047FU27v4qmqLvKZoIkww8msh7KpSqvzuKVTshoTTyAbCTWlE25YEqoqqgkI8d+U7ygAENNQ==",
       "type": "package",
-      "path": "weasel.entityframeworkcore/8.9.0",
+      "path": "weasel.entityframeworkcore/8.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4946,7 +4946,7 @@
         "lib/net8.0/Weasel.EntityFrameworkCore.xml",
         "lib/net9.0/Weasel.EntityFrameworkCore.dll",
         "lib/net9.0/Weasel.EntityFrameworkCore.xml",
-        "weasel.entityframeworkcore.8.9.0.nupkg.sha512",
+        "weasel.entityframeworkcore.8.8.1.nupkg.sha512",
         "weasel.entityframeworkcore.nuspec"
       ]
     },
@@ -4984,10 +4984,10 @@
         "wolverinefx.nuspec"
       ]
     },
-    "WolverineFx.EntityFrameworkCore/5.19.1": {
-      "sha512": "Ed+HKLyn04aZdMGEARqVEFNJEQciWITl9ycQVZnE6bHwE6Kbsutm07VMxJsg+mTZoz4g6whJQZEhfG/HPjUicQ==",
+    "WolverineFx.EntityFrameworkCore/5.17.0": {
+      "sha512": "VsolUMeYPxYg4QcvKH1Ui1d7NR/0GTUmkQfWdfxAlxtTT/UZGOaet0GWjzm8Osqk97ouJfCG19tID8cVKKes7g==",
       "type": "package",
-      "path": "wolverinefx.entityframeworkcore/5.19.1",
+      "path": "wolverinefx.entityframeworkcore/5.17.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5000,7 +5000,7 @@
         "lib/net9.0/Wolverine.EntityFrameworkCore.dll",
         "lib/net9.0/Wolverine.EntityFrameworkCore.runtimeconfig.json",
         "lib/net9.0/Wolverine.EntityFrameworkCore.xml",
-        "wolverinefx.entityframeworkcore.5.19.1.nupkg.sha512",
+        "wolverinefx.entityframeworkcore.5.17.0.nupkg.sha512",
         "wolverinefx.entityframeworkcore.nuspec"
       ]
     },
@@ -5038,10 +5038,10 @@
         "wolverinefx.rabbitmq.nuspec"
       ]
     },
-    "WolverineFx.RDBMS/5.19.1": {
-      "sha512": "tH2el1Q2BG/5Do9gLHmDgsfQTasItdXlsSVqhBQlgSlWy5yMDt0y+0UR3dVjNZzpEKT3NJgcEHWCnYPnsRjd0A==",
+    "WolverineFx.RDBMS/5.17.0": {
+      "sha512": "PwHOICMum8gRmQgJvaSsMDTHOImPQdtPWVcCdauHT41tuOcc7WBDp+SH9ogT1csqjO8TuVJCGBIzSoxagsBqKw==",
       "type": "package",
-      "path": "wolverinefx.rdbms/5.19.1",
+      "path": "wolverinefx.rdbms/5.17.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5051,7 +5051,7 @@
         "lib/net8.0/Wolverine.RDBMS.xml",
         "lib/net9.0/Wolverine.RDBMS.dll",
         "lib/net9.0/Wolverine.RDBMS.xml",
-        "wolverinefx.rdbms.5.19.1.nupkg.sha512",
+        "wolverinefx.rdbms.5.17.0.nupkg.sha512",
         "wolverinefx.rdbms.nuspec"
       ]
     },
@@ -5081,7 +5081,7 @@
       "NexusHR.Shared.Kernel >= 1.0.0",
       "Swashbuckle.AspNetCore >= 10.1.4",
       "WolverineFx >= 5.17.0",
-      "WolverineFx.EntityFrameworkCore >= 5.19.1",
+      "WolverineFx.EntityFrameworkCore >= 5.17.0",
       "WolverineFx.Postgresql >= 5.17.0",
       "WolverineFx.RabbitMQ >= 5.17.0"
     ]
@@ -5163,7 +5163,7 @@
           },
           "WolverineFx.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[5.19.1, )"
+            "version": "[5.17.0, )"
           },
           "WolverineFx.Postgresql": {
             "target": "Package",
@@ -5610,16 +5610,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: WolverineFx from 5.19.1 to 5.17.0. Reference the package directly from the project to select a different version. \r\n Employees.Api -> WolverineFx.EntityFrameworkCore 5.19.1 -> WolverineFx.RDBMS 5.19.1 -> WolverineFx (>= 5.19.1) \r\n Employees.Api -> WolverineFx (>= 5.17.0)",
-      "libraryId": "WolverineFx",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  }
 }

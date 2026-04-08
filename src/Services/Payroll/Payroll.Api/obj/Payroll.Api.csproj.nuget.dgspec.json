@@ -915,6 +915,14 @@
               "target": "Package",
               "version": "[5.17.0, )"
             },
+            "WolverineFx.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.17.0, )"
+            },
+            "WolverineFx.Postgresql": {
+              "target": "Package",
+              "version": "[5.17.0, )"
+            },
             "WolverineFx.RabbitMQ": {
               "target": "Package",
               "version": "[5.17.0, )"

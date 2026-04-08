@@ -1,4 +1,3 @@
-using System;
 using System.Reflection;
 using Employees.Api.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -13,12 +12,13 @@ public class EmployeesDbContext(DbContextOptions<EmployeesDbContext> options) :
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+        
         // за раз применяем все конфигурации сборки
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-        // добавление таблиц для outbox и inbox сообщений
-        modelBuilder.MapWolverineEnvelopeStorage();
-
-        base.OnModelCreating(modelBuilder);
+        // This enables your DbContext to map the incoming and
+        // outgoing messages as part of the outbox
+        //modelBuilder.MapWolverineEnvelopeStorage("wolverine"); //? Без этого работает и обработчик и метод контроллера
     }
 }

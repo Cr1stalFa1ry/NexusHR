@@ -222,3 +222,15 @@ C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0
 C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\obj\Debug\net10.0\Payroll.Api.sourcelink.json
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\DistributedLock.Core.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\DistributedLock.Postgres.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\NetTopologySuite.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\NetTopologySuite.IO.PostGis.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Npgsql.NetTopologySuite.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Weasel.Core.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Weasel.EntityFrameworkCore.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Weasel.Postgresql.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Wolverine.EntityFrameworkCore.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Wolverine.Postgresql.dll
+C:\Users\User\Desktop\NexusHR\src\Services\Payroll\Payroll.Api\bin\Debug\net10.0\Wolverine.RDBMS.dll

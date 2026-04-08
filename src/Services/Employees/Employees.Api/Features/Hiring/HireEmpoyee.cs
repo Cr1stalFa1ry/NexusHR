@@ -3,46 +3,29 @@ using Employees.Api.Domain;
 using Wolverine;
 using Employees.Contracts.Events;
 using Microsoft.AspNetCore.Mvc;
+using Wolverine.Attributes;
 using Wolverine.EntityFrameworkCore;
 
 namespace Employees.Api.Features.Hiring;
 
-// контракт
 public record HireEmployeeCommand(string FirstName, string LastName, string Email, string? Contacts);
-
-// minimal api
-// public static class EmployeeEndpoints
-// {
-//     public static IEndpointRouteBuilder MapEmployees(this IEndpointRouteBuilder app)
-//     {
-//         app.MapPost("/api/employees", async (HireEmployeeCommand command, IMessageBus bus) =>
-//         {
-//             // прокидываем как в MediatR запрос и получаем ответ, варинат работы Request/Response
-//             var result = await bus.InvokeAsync<HiredEmployee>(command);
-//             // если бы я выкинул комманду без возвращения результата:
-//             // await bus.InvokeAsync(command); то событие бы отправилось в очередь брокера сообщений
-
-//             // публикуем сообщение в очередь
-//             await bus.PublishAsync(result);
-
-//             return Results.Created($"/api/employees/{result.EmployeeId}", result);
-//         });
-
-//         return app;
-//     }
-// }
 
 [ApiController]
 [Route("/api")]
 public class EmployeesController : ControllerBase
 {
     [HttpPost("/employees")]
-    public async Task Post(
-        [FromBody] HireEmployeeCommand command,
-        [FromServices] IDbContextOutbox<EmployeesDbContext> outbox
-    )
+    public async Task<IResult> Post([FromBody] HireEmployeeCommand command, [FromServices] IMessageBus bus)
     {
-        // create new employee
+        var hiredEmployee = await bus.InvokeAsync<Employee>(command);
+        return Results.Ok(new { employeeId = hiredEmployee.Id });
+    }
+
+    [HttpPost("/employees-test-with-db_context_outbox")]
+    public async Task Post2(
+        [FromBody] HireEmployeeCommand command,
+        [FromServices] IDbContextOutbox<EmployeesDbContext> outbox)
+    {
         var employee = new Employee(
             command.FirstName, 
             command.LastName, 
@@ -50,53 +33,55 @@ public class EmployeesController : ControllerBase
             command.Contacts
         );
 
-        // add employee to the current DbContext unit of work
-        outbox.DbContext.Employees.Add(employee);
+        // Add the item to the current
+        // DbContext unit of work
+        outbox.DbContext.Add(employee);
 
-        // publish message to take action on the new employee in a background thread
+         // Publish a message to take action on the new item
+        // in a background thread
         await outbox.PublishAsync(new HiredEmployee(
-                employee.Id, 
-                employee.FirstName, 
-                employee.LastName, 
-                employee.Email, 
-                employee.Contacts
-            )
-        );
+            employee.Id, 
+            employee.FirstName, 
+            employee.LastName, 
+            employee.Email, 
+            employee.Contacts
+        ));
 
-        
         // Commit all changes and flush persisted messages
         // to the persistent outbox
         // in the correct order
         await outbox.SaveChangesAndFlushMessagesAsync();
     }
 }
+ 
+public static class HireEmployeeHandler
+{
+    [Transactional]
+    public static (Employee, HiredEmployee) Handle(
+        HireEmployeeCommand command, 
+        EmployeesDbContext dbContext)
+    {
+        var employee = new Employee(
+            command.FirstName, 
+            command.LastName, 
+            command.Email, 
+            command.Contacts
+        );
 
-// обработчик 
-// public static class HireEmployeeHandler
-// {
-//     public async static Task<HiredEmployee> Handle(
-//         HireEmployeeCommand command, 
-//         EmployeesDbContext dbContext)
-//     {
-//         var employee = new Employee(
-//             command.FirstName, 
-//             command.LastName, 
-//             command.Email, 
-//             command.Contacts
-//         );
+        // сохранение в бд нового работника
+        dbContext.Employees.Add(employee);
 
-//         // сохранение в бд нового работника
-//         dbContext.Employees.Add(employee);
-//         await dbContext.SaveChangesAsync();
-
-//         // отправка сообщения в другие микросервисы
-//         return new HiredEmployee(
-//             employee.Id, 
-//             employee.FirstName, 
-//             employee.LastName, 
-//             employee.Email, 
-//             employee.Contacts
-//         );
-//     }
-// }
+        // отправка каскаодного сообщения
+        // This event being returned
+        // by the handler will be automatically sent
+        // out as a "cascading" message
+        return (employee, new HiredEmployee(
+            employee.Id, 
+            employee.FirstName, 
+            employee.LastName, 
+            employee.Email, 
+            employee.Contacts
+        ));
+    }
+}
 

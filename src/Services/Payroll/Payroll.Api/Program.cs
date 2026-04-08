@@ -1,9 +1,13 @@
 using Wolverine;
 using Wolverine.RabbitMQ;
-using Payroll.Api.Context;
-using Microsoft.EntityFrameworkCore;
+using Wolverine.Postgresql;
 using Wolverine.ErrorHandling;
+using Wolverine.EntityFrameworkCore;
+
 using JasperFx.Core;
+using Microsoft.EntityFrameworkCore;
+
+using Payroll.Api.Context;
 using Employees.Contracts.Events;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,15 +17,23 @@ builder.AddServiceDefaults();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.AddNpgsqlDbContext<PayrollDbContext>("payroll-db");
+
 builder.Host.UseWolverine(opts =>
 {
     // получаем строку подключения по messging, которую настроили в AppHost
     var connectionString = builder.Configuration.GetConnectionString("messaging");
+    var connectionStringPostgres = builder.Configuration.GetConnectionString("payroll-db");
+
+    opts.PersistMessagesWithPostgresql(connectionStringPostgres!);
+    opts.UseEntityFrameworkCoreTransactions();
 
     opts.UseRabbitMq(new Uri(connectionString!))
         .AutoProvision();
 
-    opts.ListenToRabbitQueue("hired-employees");
+    opts.ListenToRabbitQueue("hired-employees").UseDurableInbox();
+    // либо сразу для всех endpoints
+    // opts.Policies.UseDurableInboxOnAllListeners()
 
     opts.PublishMessage<BonusAwarded>().ToRabbitQueue("notifications");
 
@@ -29,8 +41,6 @@ builder.Host.UseWolverine(opts =>
     // создать сообщения с нарастающей паузой.
     opts.Policies.OnException<Exception>().RetryWithCooldown(50.Milliseconds(), 100.Milliseconds(), 250.Milliseconds());
 });
-
-builder.AddNpgsqlDbContext<PayrollDbContext>("payroll-db");
 
 var app = builder.Build();
 

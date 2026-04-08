@@ -10,3 +10,4 @@ C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.ServiceDefaults\obj\Debu
 C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.ServiceDefaults\obj\Debug\net10.0\refint\NexusHR.ServiceDefaults.dll
 C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.ServiceDefaults\obj\Debug\net10.0\NexusHR.ServiceDefaults.pdb
 C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.ServiceDefaults\obj\Debug\net10.0\ref\NexusHR.ServiceDefaults.dll
+C:\Users\User\Desktop\NexusHR\src\Orchestration\NexusHR.ServiceDefaults\obj\Debug\net10.0\NexusHR.ServiceDefaults.sourcelink.json

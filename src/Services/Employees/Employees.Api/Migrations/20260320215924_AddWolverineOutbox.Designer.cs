@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Employees.Api.Migrations
 {
     [DbContext(typeof(EmployeesDbContext))]
-    [Migration("20260312222339_AddOutbox")]
-    partial class AddOutbox
+    [Migration("20260320215924_AddWolverineOutbox")]
+    partial class AddWolverineOutbox
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

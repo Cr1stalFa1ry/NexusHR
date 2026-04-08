@@ -584,7 +584,7 @@
             },
             "WolverineFx.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.19.1, )"
+              "version": "[5.17.0, )"
             },
             "WolverineFx.Postgresql": {
               "target": "Package",

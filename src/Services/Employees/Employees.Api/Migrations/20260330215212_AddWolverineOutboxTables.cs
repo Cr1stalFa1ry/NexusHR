@@ -5,7 +5,7 @@
 namespace Employees.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class AddOutbox : Migration
+    public partial class AddWolverineOutboxTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

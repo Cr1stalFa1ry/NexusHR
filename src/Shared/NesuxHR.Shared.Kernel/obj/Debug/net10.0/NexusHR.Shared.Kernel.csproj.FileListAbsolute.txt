@@ -9,3 +9,4 @@ C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net10.0
 C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net10.0\refint\NexusHR.Shared.Kernel.dll
 C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net10.0\NexusHR.Shared.Kernel.pdb
 C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net10.0\ref\NexusHR.Shared.Kernel.dll
+C:\Users\User\Desktop\NexusHR\src\Shared\NesuxHR.Shared.Kernel\obj\Debug\net10.0\NexusHR.Shared.Kernel.sourcelink.json

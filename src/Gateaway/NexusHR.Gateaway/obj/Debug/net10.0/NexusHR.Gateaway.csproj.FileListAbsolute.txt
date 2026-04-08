@@ -60,3 +60,4 @@ C:\Users\User\Desktop\NexusHR\src\Gateaway\NexusHR.Gateaway\obj\Debug\net10.0\re
 C:\Users\User\Desktop\NexusHR\src\Gateaway\NexusHR.Gateaway\obj\Debug\net10.0\NexusHR.Gateaway.pdb
 C:\Users\User\Desktop\NexusHR\src\Gateaway\NexusHR.Gateaway\obj\Debug\net10.0\NexusHR.Gateaway.genruntimeconfig.cache
 C:\Users\User\Desktop\NexusHR\src\Gateaway\NexusHR.Gateaway\obj\Debug\net10.0\ref\NexusHR.Gateaway.dll
+C:\Users\User\Desktop\NexusHR\src\Gateaway\NexusHR.Gateaway\obj\Debug\net10.0\NexusHR.Gateaway.sourcelink.json

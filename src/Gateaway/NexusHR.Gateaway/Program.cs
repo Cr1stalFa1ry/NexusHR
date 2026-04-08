@@ -22,11 +22,6 @@ if(app.Environment.IsDevelopment())
         opts.SwaggerEndpoint("/swagger/api/employees", "Swagger Employees Service");
     });
 }
-// app.UseSwaggerUI(options =>
-// {
-//     options.SwaggerEndpoint("/api/employees/swagger/v1/swagger.json", "Employees Service");
-//     options.SwaggerEndpoint("/api/payroll/swagger/v1/swagger.json", "Payroll Service");
-// });
 
 // Включаем стандартные эндпоинты Aspire (Health Checks и т.д.)
 app.UseHttpsRedirection();
