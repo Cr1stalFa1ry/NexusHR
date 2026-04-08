@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NexusHR.Shared.Kernel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90dace72f930e4711c48e2c6b978d7822fb7c2ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b67b1b867ba606744c6e93c0fc24dbb66ea277a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("NexusHR.Shared.Kernel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NexusHR.Shared.Kernel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

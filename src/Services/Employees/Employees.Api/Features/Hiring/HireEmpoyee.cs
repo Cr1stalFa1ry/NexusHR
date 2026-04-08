@@ -8,20 +8,28 @@ using Wolverine.EntityFrameworkCore;
 
 namespace Employees.Api.Features.Hiring;
 
-public record HireEmployeeCommand(string FirstName, string LastName, string Email, string? Contacts);
+public record HireEmployeeCommand(
+    string FirstName, 
+    string LastName, 
+    string Email, 
+    string Position,
+    string Department,
+    decimal Salary, 
+    string? Contacts
+);
 
 [ApiController]
-[Route("/api")]
-public class EmployeesController : ControllerBase
+[Route("/api/employees")]
+public partial class EmployeesController : ControllerBase
 {
-    [HttpPost("/employees")]
+    [HttpPost]
     public async Task<IResult> Post([FromBody] HireEmployeeCommand command, [FromServices] IMessageBus bus)
     {
         var hiredEmployee = await bus.InvokeAsync<Employee>(command);
         return Results.Ok(new { employeeId = hiredEmployee.Id });
     }
 
-    [HttpPost("/employees-test-with-db_context_outbox")]
+    [HttpPost("/test-with-db_context_outbox")]
     public async Task Post2(
         [FromBody] HireEmployeeCommand command,
         [FromServices] IDbContextOutbox<EmployeesDbContext> outbox)
@@ -30,6 +38,9 @@ public class EmployeesController : ControllerBase
             command.FirstName, 
             command.LastName, 
             command.Email, 
+            command.Position,
+            command.Department,
+            command.Salary,
             command.Contacts
         );
 
@@ -65,6 +76,9 @@ public static class HireEmployeeHandler
             command.FirstName, 
             command.LastName, 
             command.Email, 
+            command.Position,
+            command.Department,
+            command.Salary,
             command.Contacts
         );
 
