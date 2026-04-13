@@ -12,7 +12,7 @@ public record GetEmployeeByIdCommand(Guid Id);
 
 [ApiController]
 [Route("/api/employees")]
-public partial class EmployeesController : ControllerBase
+public class ViewEmployeesController : ControllerBase
 {
     [HttpGet]
     public async Task<IResult> Get(
@@ -39,7 +39,7 @@ public partial class EmployeesController : ControllerBase
     }
 }
 
-public class ViewEmployeesHandler
+public class ViewEmployeeHandler
 {
     /// <summary>
     /// Get sequence of Employees
@@ -75,7 +75,7 @@ public class ViewEmployeesHandler
     /// <param name="dbContext"></param>
     /// <returns></returns>
     [NonTransactional]
-    public static async Task<Employee> Handle(
+    public static async Task<Employee?> Handle(
         GetEmployeeByIdCommand command,
         CancellationToken cancellationToken, 
         EmployeesDbContext dbContext)

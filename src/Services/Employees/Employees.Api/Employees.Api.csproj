@@ -24,10 +24,7 @@
     <Folder Include="Context\" />
     <Folder Include="Context\Configurations\" />
     <Folder Include="Domain\" />
-    <Folder Include="Features\Firing\" />
-    <Folder Include="Features\Hiring\" />
-    <Folder Include="Features\update\" />
-    <Folder Include="Features\Viewing\" />
+    <Folder Include="Middlewares\" />
     <Folder Include="Validators\" />
   </ItemGroup>
 

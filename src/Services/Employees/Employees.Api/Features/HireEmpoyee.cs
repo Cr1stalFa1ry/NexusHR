@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Wolverine.Attributes;
 using Wolverine.EntityFrameworkCore;
 
-namespace Employees.Api.Features.Hiring;
+namespace Employees.Api.Features;
 
 public record HireEmployeeCommand(
     string FirstName, 
@@ -20,7 +20,7 @@ public record HireEmployeeCommand(
 
 [ApiController]
 [Route("/api/employees")]
-public partial class EmployeesController : ControllerBase
+public class HireEmployeesController : ControllerBase
 {
     [HttpPost]
     public async Task<IResult> Post([FromBody] HireEmployeeCommand command, [FromServices] IMessageBus bus)
@@ -29,7 +29,7 @@ public partial class EmployeesController : ControllerBase
         return Results.Ok(new { employeeId = hiredEmployee.Id });
     }
 
-    [HttpPost("/test-with-db_context_outbox")]
+    [HttpPost("test-with-db_context_outbox")]
     public async Task Post2(
         [FromBody] HireEmployeeCommand command,
         [FromServices] IDbContextOutbox<EmployeesDbContext> outbox)
